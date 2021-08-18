@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'd(+nkuqkw80@!)a__^^%9%-2jk1x&m#=0!axqz+dm0zvr=y$n#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_graphql_movies.movies',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +71,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_graphql_movies.wsgi.application'
 
+GRAPHENE = {
+    'SCHEMA': 'django_graphql_movies.schema.schema'
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

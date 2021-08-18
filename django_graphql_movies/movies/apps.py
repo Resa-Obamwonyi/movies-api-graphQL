@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class MoviesConfig(AppConfig):
-    name = 'movies'
+    name = 'django_graphql_movies.movies'
